@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <style>
+            body {
+                margin: 0;
+            }
+            #full-page {
+                margin: 0;
+                position: relative;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: grey;
+                display: flex;
+            }
+            #score {
+                display: inline-block;
+            }
+            #stats {
+                font-size: 25px;
+                font-weight: bold;
+                font-family: monospace;
+                text-align: center;
+            }
+            #game {
+                padding: 24px;
+                margin: auto;
+                background-color: lightgray;
+                border-radius: 24px;
+            }
+        </style>
+        <title>Puyopuyo</title>
+    </head>
+    <body>
+        <div id="full-page">
+            <div id="game">
+                <canvas id="puyopuyo" width="240" height="480">Your browser does not support canvas elements :(</canvas>
+                <div id="stats">
+                    Score : <div id="score">0</div>
+                </div>
+            </div>
+        </div>
+        <script src="js/puyopuyo.js"></script>
+    </body>
+</html>
