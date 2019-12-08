@@ -5,6 +5,7 @@ const scoreElement = document.getElementById("score");
 const HEIGHT = 20;
 const WIDTH = 10;
 const SQUARE = 24;
+const RADIUS = 10;
 const VACANT = "DARKGREY";
 const SLOW_TICK = 500;
 const FAST_TICK = 100;
@@ -13,11 +14,20 @@ const Y = 1;
 
 // Draw a grid square
 function drawSquare(x, y, colour) {
-    context.fillStyle = colour;
+    context.fillStyle = VACANT;
     context.fillRect(x*SQUARE, y*SQUARE, SQUARE, SQUARE);
 
-    context.strokeStyle = "WHITE";
+    context.strokeStyle = "GREY";
     context.strokeRect(x*SQUARE, y*SQUARE, SQUARE, SQUARE);
+
+    if (colour != VACANT) {
+        context.beginPath();
+        context.arc((x + 0.5)*SQUARE, (y + 0.5) * SQUARE, RADIUS, 0, 2*Math.PI, false);
+        context.fillStyle = colour;
+        context.fill();
+        context.strokeStyle = "BLACK";
+        context.stroke();
+    }
 }
 
 // Initialise the game
