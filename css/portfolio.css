@@ -1,1 +1,36 @@
+body {
+    position: relative;
+}
 
+.app-area {
+    margin-top: 12rem;
+}
+
+.section {
+    max-width: 75rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    min-height: 100vh;
+    min-width: 18rem;
+}
+
+.tag {
+    font-size: 75%;
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    text-align: center;
+    border-radius: 0.25rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    font-weight: 700;
+    line-height: 1;
+    background-color: #777777;
+    color: #ffffff;
+    margin-right: 0.25em;
+}
+
+#chart {
+    height: 480px;
+    padding-left: 0;
+    padding-right: 0;
+}
