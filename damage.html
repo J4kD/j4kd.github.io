@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JDark</title>
+
+    <!-- jQuery -->
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+    <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- plotly.js -->
+    <script
+        src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+
+    <link
+        rel="stylesheet"
+        href="css/portfolio.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">JDark</a>
+        </div>
+    </nav>
+
+    <div class="container app-area">
+        <div class="card">
+            <div class="card-body">
+                <div class="container bg-secondary" id="chart"></div>
+            </div>
+            <div class="card-footer">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Hit Roll:</span>
+                    </div>
+                    <input class="form-control" type="text" id="hit-roll" value="50">
+                    <div class="input-group-prepend input-group-append">
+                        <span class="input-group-text">Damage Modifier:</span>
+                    </div>
+                    <input class="form-control" type="text" id="damage-mod" value="-2">
+                    <div class="input-group-prepend input-group-append">
+                        <span class="input-group-text">Semi-Auto RoF:</span>
+                    </div>
+                    <input class="form-control" type="text" id="semi-auto" value="3">
+                    <div class="input-group-prepend input-group-append">
+                        <span class="input-group-text">Full-Auto RoF:</span>
+                    </div>
+                    <input class="form-control" type="text" id="full-auto" value="0">
+                    <div class="input-group-prepend input-group-append">
+                        <span class="input-group-text">Max Damage:</span>
+                    </div>
+                    <input class="form-control" type="text" id="truncate" value="10">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add Rule</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#" onclick="add_trait(`reliable`); return false;">Reliable</a>
+                            <a class="dropdown-item" href="#" onclick="add_trait(`unreliable`); return false;">Unreliable</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" onclick="add_trait(`tearing`); return false;">Tearing</a>
+                            <a class="dropdown-item" href="#" onclick="add_trait(`hammer`); return false;">Hammer of the Emperor</a>
+                            <a class="dropdown-item" href="#" onclick="add_trait(`storm`); return false;">Storm</a>
+                            <div role="separator" class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#" onclick="add_trait(`rds`); return false;">Red Dot Sight</a>
+                            <a class="dropdown-item" href="#" onclick="add_trait(`mp`); return false;">Motion Predictor</a>
+                        </div>
+                    </div>
+                    <div class="form-control" id="trait-tags"></div>
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" id="calculate-btn" onclick="update_plot();">
+                            Calculate
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Scripts -->
+    <script src="js/damage.js"></script>
+</body>
+</html>

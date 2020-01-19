@@ -1,50 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <style>
-            body {
-                margin: 0;
-            }
-            #full-page {
-                margin: 0;
-                position: relative;
-                left: 0;
-                top: 0;
-                width: 100vw;
-                height: 100vh;
-                background-color: lightblue;
-                display: flex;
-            }
-            #score {
-                display: inline-block;
-            }
-            #stats {
-                font-size: 25px;
-                font-weight: bold;
-                font-family: monospace;
-                text-align: center;
-            }
-            #game {
-                padding: 24px;
-                margin: auto;
-                background-color: grey;
-                border-radius: 24px;
-            }
-        </style>
-        <title>Puyopuyo</title>
-    </head>
-    <body>
-        <div id="full-page">
-            <div id="game">
-                <canvas id="puyopuyo" width="240" height="480">Your browser does not support canvas elements :(</canvas>
-                <div id="stats">
-                    Score : <div id="score">0</div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JDark</title>
+
+    <!-- jQuery -->
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <!-- Popper.js -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <link
+        rel="stylesheet"
+        href="css/portfolio.css">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+    
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
+        <div class="container">
+            <span class="navbar-brand">JDark</span>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">Projects</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="projects" class="section container-fluid">
+        <h1>Projects</h1>
+        <div class="card-deck text-center mt-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="damage.html">Damage Calculator</a></h5>
+                    <p class="card-text">
+                        Calculates and plots the cumulative damage distributions for single shot, semi-auto, and full-auto fire in Dark Heresy 2.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated --TODO--</small>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="wiki.html">Campaign Wiki</a></h5>
+                    <p class="card-text">
+                        Wiki for the ongoing Dark Heresy 2 campaign "Graver Concerns".
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated --TODO--</small>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="puyopuyo.html">PuyoPuyo</a></h5>
+                    <p class="card-text">
+                        Basic implementation of PuyoPuyo.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Last updated --TODO--</small>
                 </div>
             </div>
         </div>
-        <script src="js/puyopuyo.js"></script>
-    </body>
+    </div>
+
+</body>
 </html>
