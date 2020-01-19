@@ -2,10 +2,10 @@ const canvas = document.getElementById("puyopuyo");
 const context = canvas.getContext("2d");
 const scoreElement = document.getElementById("score");
 
-const HEIGHT = 20;
-const WIDTH = 10;
-const SQUARE = 24;
-const RADIUS = 10;
+const HEIGHT = 12;
+const WIDTH = 6;
+const SQUARE = 36;
+const RADIUS = 16;
 const VACANT = "DARKGREY";
 const SLOW_TICK = 500;
 const FAST_TICK = 100;
@@ -278,7 +278,7 @@ function drop() {
     let delta = now - dropStart;
     if (delta > FAST_TICK && p === null) {
         updateBoard();
-        scoreElement.innerHTML = score;
+        scoreElement.innerHTML = "Score: " + score;
         drawBoard();
         dropStart = Date.now();
     } else if (delta > SLOW_TICK && p !== null) {
